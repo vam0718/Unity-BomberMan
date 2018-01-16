@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AEBADD57-8EF3-013C-C7CE-01D26EDECD7A}</ProjectGuid>
+    <ProjectGuid>{A170D4D2-0A13-08E2-2720-FEA1BC692AEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -80,6 +80,8 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Block.cs" />
     <Compile Include="Assets\Script\BomController.cs" />
+    <Compile Include="Assets\Script\ClearPlane.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\ExprosionController1.cs" />
     <Compile Include="Assets\Script\ExprosionController2.cs" />
     <Compile Include="Assets\Script\ExprosionController3.cs" />

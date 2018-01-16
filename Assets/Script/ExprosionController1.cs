@@ -16,16 +16,6 @@ public class ExprosionController1 : MonoBehaviour
         {
             unblockHit = true;
         }
-
-        /*f (hit.gameObject.tag == "breakBlock")
-        {
-            unblockHit = true;
-        }
-
-        if (hit.gameObject.tag == "Wall")
-        {
-            unblockHit = true;
-        }*/
     }
 
     void FixedUpdate()
@@ -46,7 +36,6 @@ public class ExprosionController1 : MonoBehaviour
                     transform.localScale = scale;
                     transform.position = pos;
                 }
-                //fireScale();
             }
         }
 
