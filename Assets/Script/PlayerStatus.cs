@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//プレイヤーステータス
+
 public class PlayerStatus : MonoBehaviour
 {
     //プレイヤー移動スピード

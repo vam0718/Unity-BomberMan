@@ -5,11 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    //public float speed = 100;
     public int hp;
     public float speed;
     public bool axisswitch;
 
+    //Enemyの自動移動処理
     void Update ()
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -25,14 +25,17 @@ public class Enemy : MonoBehaviour
             rigidbody.AddForce(0, 0, pos.z + speed);
         }
 
+        //HPが０になったら消滅
         if(hp == 0)
         {
             Destroy(gameObject);
         }
     }
 
+    //トリガーヒット処理
     void OnTriggerEnter(Collider hit)
     {
+        //FireにヒットしたらＨＰが１減る処理
         if(hit.gameObject.tag == "Fire")
         {
             hp = hp - 1;
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //壁やボムに当たったら逆方向に移動する処理
     void OnCollisionEnter(Collision hit)
     {
 

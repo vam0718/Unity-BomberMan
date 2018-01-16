@@ -9,7 +9,7 @@ public class ExprosionController1 : MonoBehaviour
     public GameObject ExprosionPrefab;
     public bool unblockHit = false;
 
-    
+    //条件タグにヒットしたら、スケール調整できるように※１
     void OnTriggerEnter(Collider hit)
     {
         if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom")
@@ -18,8 +18,10 @@ public class ExprosionController1 : MonoBehaviour
         }
     }
 
+    //火力調整処理
     void FixedUpdate()
     {
+        //※１
         if (!unblockHit)
         {
             //炎のスケール(Y)が火力値より小さい時
@@ -39,7 +41,7 @@ public class ExprosionController1 : MonoBehaviour
             }
         }
 
-
+        //一定秒後消滅
         exprosionDelay -= Time.deltaTime;
         if (exprosionDelay < 0)
         {

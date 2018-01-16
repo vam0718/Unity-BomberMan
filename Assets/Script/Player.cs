@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        //プレイヤーコライダー取得
         playerCollider = GetComponent<CapsuleCollider>();
     }
 
+    //ボムセット処理
     void Update()
     {
         if (colliderHit == false)
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown("y"))colliderHit = false;
     }
 
+    //操作処理
     void FixedUpdate()
     {
         Vector3 pos = transform.position;
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-
+        //操作分岐
         if(clearHit == false)
         {
             rigidbody.AddForce(x * PlayerStatus.speed, 0, z * PlayerStatus.speed);
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //ボムセットメソッド
     public void BomSet()
     {
         if (PlayerStatus.bomSetCount <= 0) return;
@@ -58,18 +62,22 @@ public class Player : MonoBehaviour
         PlayerStatus.bomSetCount--;
     }
 
+    //トリガーヒット処理
     void OnTriggerEnter(Collider hit)
     {
+        //ボム
         if (hit.gameObject.tag == "Bom")
         {
             colliderHit = true;
         }
 
+        //ファイヤにヒットしたらオブジェクト削除
         if (hit.gameObject.tag == "Fire")
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
+        //ClearPlaneにヒットしたらすり抜け
         if (hit.gameObject.tag == "ClearPlane")
         {
             playerCollider.isTrigger = true;

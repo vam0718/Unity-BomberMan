@@ -16,6 +16,7 @@ public class ClearPlane : MonoBehaviour
     {
         int objcount = EnemyStageWaves.transform.childCount;
 
+        //ステージ内の敵が全滅したらトリガーをＯＮにする
         if(objcount == 0)
         {
             clearPlaneCollider.isTrigger = true;

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Exprosionの中心処理
+
 public class ExprosionSenterController : MonoBehaviour
 {
     public float exprosionDelay;
