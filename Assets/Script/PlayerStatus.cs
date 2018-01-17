@@ -10,7 +10,7 @@ public class PlayerStatus : MonoBehaviour
     public static float speed = 80;
 
     //最大ボム設置可能数初期値
-    private static int maxBomSetCount = 3;
+    private static int maxBomSetCount = 1;
 
     //エクスプロージョン火力
     public static float firePower = 0;

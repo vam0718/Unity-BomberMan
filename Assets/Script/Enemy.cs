@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int hp;
     public float speed;
     public bool axisswitch;
+    public GameObject ItemDropPrefab;
 
     //Enemyの自動移動処理
     void Update ()
@@ -43,6 +44,11 @@ public class Enemy : MonoBehaviour
             if(hp <= 0)
             {
                 Destroy(this.gameObject);
+
+                if(ItemDropPrefab != null)
+                {
+                    Instantiate(ItemDropPrefab, transform.position, ItemDropPrefab.transform.rotation);
+                }
             }
         }
     }

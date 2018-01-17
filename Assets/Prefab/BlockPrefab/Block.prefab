@@ -150,7 +150,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114165504315749058
 MonoBehaviour:
@@ -163,3 +163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f9aacf1460764bb7eb30fdf1e8f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemDropPrefab: {fileID: 0}
