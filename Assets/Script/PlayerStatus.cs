@@ -21,9 +21,9 @@ public class PlayerStatus : MonoBehaviour
     //最大ボム設置可能数
     public static int bomSetCount = maxBomSetCount;
 
-    void Update()
+    void Start()
     {
         //火力レベルを火力に反映
-        firePower = fireLevel;
+        firePower += fireLevel;
     }
 }
