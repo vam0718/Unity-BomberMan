@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     //プレイヤー移動スピード
-    public static float speed = 80;
+    public static float speed = 60;
 
     //最大ボム設置可能数初期値
     private static int maxBomSetCount = 1;

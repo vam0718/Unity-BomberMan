@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter(Collision hit)
     {
 
-        if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom")
+        if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom" || hit.gameObject.tag == "Enemy")
         {
             speed *= -1;
         }

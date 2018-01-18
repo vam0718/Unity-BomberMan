@@ -12,7 +12,7 @@ public class ExprosionController4 : MonoBehaviour
     //条件タグにヒットしたら、スケール調整できるように※１
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom")
+        if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom" || hit.gameObject.tag == "Enemy")
         {
             unblockHit = true;
         }

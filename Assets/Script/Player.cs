@@ -84,4 +84,12 @@ public class Player : MonoBehaviour
             clearHit = true;
         }
     }
+
+    void OnCollisionEnter(Collision hit)
+    {
+        if (hit.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
