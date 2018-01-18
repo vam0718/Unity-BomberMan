@@ -17,13 +17,10 @@ public class ExprosionController3 : MonoBehaviour
         }
     }
 
-    //火力調整処理
-    void FixedUpdate()
+    void Fire()
     {
-        //※１
         if (!unblockHit)
         {
-            //炎のスケール(Y)が火力値より小さい時
             if (transform.localScale.y < PlayerStatus.firePower)
             {
                 // i が火力値より小さい時はループ
@@ -31,14 +28,22 @@ public class ExprosionController3 : MonoBehaviour
                 {
                     Vector3 scale = transform.localScale;
                     Vector3 pos = transform.position;
-                    scale.y += 0.2f;
-                    pos.x -= 0.2f;
+                    scale.y += 0.05f;
+                    pos.x -= 0.05f;
 
                     transform.localScale = scale;
                     transform.position = pos;
+
+                    //Fire();
                 }
             }
         }
+    }
+
+    //火力調整処理
+    void FixedUpdate()
+    {
+        Fire();
 
         //一定秒後消滅
         exprosionDelay -= Time.deltaTime;
