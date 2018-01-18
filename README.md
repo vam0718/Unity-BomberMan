@@ -1,5 +1,8 @@
 # Unity-BomberMan
 
+## 公開ページ
+https://vam0718.github.io/Play.BomberMan/
+ 
 ## 操作方法
 - 矢印キー（もしくはＷ，Ａ，Ｓ，Ｄ）で移動
 - Ｚキーでボムセット
