@@ -10,3 +10,6 @@ https://vam0718.github.io/Play.BomberMan/
 ## 開発環境
 - Unity5.6.4f1
 
+## BGM.SE素材使用
+- 魔王魂
+- https://maoudamashii.jokersounds.com/
