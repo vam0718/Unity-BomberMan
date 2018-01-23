@@ -11,5 +11,5 @@ https://vam0718.github.io/Play.BomberMan/
 - Unity5.6.4f1
 
 ## BGM.SE素材使用
-- 魔王魂
+ 魔王魂
 - https://maoudamashii.jokersounds.com/
