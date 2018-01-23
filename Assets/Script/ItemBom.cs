@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class ItemBom : MonoBehaviour
 {
-	void Update ()
+	void Update()
     {
         float z = 4;
         this.transform.Rotate(0.0f, 0.0f, z);
+    }
+
+    void OnCollisionEnter(Collision hit)
+    {
+        if (hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            Debug.Log("Fire HIT");
+        }
     }
 
     void OnTriggerEnter(Collider hit)
@@ -16,6 +25,12 @@ public class ItemBom : MonoBehaviour
         {
             PlayerStatus.bomSetCount++;
             Destroy(gameObject);
+        }
+
+        if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            Debug.Log("Fire HIT");
         }
     }
 }
