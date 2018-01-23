@@ -14,7 +14,7 @@ public class ItemSpeedUp : MonoBehaviour
     {
         if (hit.gameObject.tag == "Player")
         {
-            PlayerStatus.speed += 10;
+            PlayerStatus.speed += 5;
             Destroy(gameObject);
         }
     }
