@@ -11,6 +11,7 @@ TagManager:
   - breakBlock
   - ClearPlane
   - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX

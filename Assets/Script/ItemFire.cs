@@ -22,7 +22,7 @@ public class ItemFire : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if(hit.gameObject.tag == "Player")
+        if (hit.gameObject.tag == "Player")
         {
             PlayerStatus.firePower += 0.5f;
             Destroy(gameObject);

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,11 +6,10 @@ public class Player : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject BomPrefab;
 
-    public AudioClip MainBgm;
-    public AudioClip ClearBgm;
-    private AudioSource audioSource;
+    public AudioSource[] sourses;
 
     private CapsuleCollider playerCollider;
+
     public static bool colliderHit = false;
     public bool clearHit = false;
     public bool enemyExtinction = false;
@@ -21,10 +19,8 @@ public class Player : MonoBehaviour
     {
         //プレイヤーコライダー取得
         playerCollider = GetComponent<CapsuleCollider>();
-
-        audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.clip = MainBgm;
-        audioSource.Play();
+        sourses = GetComponents<AudioSource>();
+        sourses[0].Play();
     }
 
     //ボムセット処理
@@ -73,7 +69,7 @@ public class Player : MonoBehaviour
 
     //トリガーヒット処理
     void OnTriggerEnter(Collider hit)
-    {
+    {        
         //ボム
         if (hit.gameObject.tag == "Bom")
         {
@@ -92,10 +88,13 @@ public class Player : MonoBehaviour
             playerCollider.isTrigger = true;
             clearHit = true;
 
-            audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.clip = ClearBgm;
-            audioSource.Play();
-            audioSource.loop = false;
+            sourses[0].Stop();
+            sourses[1].Play();
+        }
+
+        if (hit.gameObject.tag == "Item")
+        {
+            sourses[2].Play();
         }
     }
 

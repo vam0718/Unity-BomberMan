@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSpeedUp : MonoBehaviour
 {
-	void Update()
+    void Update()
     {
         float z = 4;
         this.transform.Rotate(0.0f, 0.0f, z);
