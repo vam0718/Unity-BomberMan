@@ -10,19 +10,9 @@ public class ItemFire : MonoBehaviour
         this.transform.Rotate(0.0f, 0.0f, z);
     }
 
-    void OnCollisionEnter(Collision hit)
-    {
-        if (hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-            Debug.Log("Fire HIT");
-
-        }
-    }
-
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.gameObject.tag == "Player")
+        if(hit.gameObject.tag == "Player")
         {
             PlayerStatus.firePower += 0.5f;
             Destroy(gameObject);
@@ -31,8 +21,6 @@ public class ItemFire : MonoBehaviour
         if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")
         { 
             Destroy(gameObject);
-            Debug.Log("Fire HIT");
-
         }
     }
 }

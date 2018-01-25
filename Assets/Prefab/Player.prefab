@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 81334105758794822}
   - component: {fileID: 82274532050662414}
   - component: {fileID: 82339770130037396}
-  - component: {fileID: 82367863442101204}
+  - component: {fileID: 82735484636722760}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -121,7 +121,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bdb853f1af92e1b48adbb49ce6831d35, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -201,7 +201,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ddea068a09e5a334c93cc3cbf87d02ab, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -270,7 +270,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82367863442101204
+--- !u!82 &82735484636722760
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -281,7 +281,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f6d3d47aac1dba643bdc7a4a3635d827, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -375,7 +375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1404336283582960}
   BomPrefab: {fileID: 1431281679432150, guid: db6b039b903e35049966b4f615188817, type: 2}
-  sourses: []
   clearHit: 0
   enemyExtinction: 0
 --- !u!136 &136454698770227788

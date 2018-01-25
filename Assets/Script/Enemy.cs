@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     public bool axisswitch;
     public GameObject ItemDropPrefab;
 
+    private bool HpZero = false;
+    private float HitDelay = 0.5f;
+
     //Enemyの自動移動処理
     void Update ()
     {
@@ -17,19 +20,35 @@ public class Enemy : MonoBehaviour
         Vector3 pos = transform.position;
         rigidbody.velocity = Vector3.zero;
 
-        if (axisswitch)
+        //HPが０になったら消滅
+        if(HpZero)
         {
-            rigidbody.AddForce(pos.x + speed, 0, 0);
+            HitDelay -= Time.deltaTime;
+            rigidbody.AddForce(0, 0, 0);
+
+            if (HitDelay <= 0)
+            {
+                if (ItemDropPrefab == null)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                    Instantiate(ItemDropPrefab, transform.position, ItemDropPrefab.transform.rotation);
+                }
+            }
         }
         else
         {
-            rigidbody.AddForce(0, 0, pos.z + speed);
-        }
-
-        //HPが０になったら消滅
-        if(hp == 0)
-        {
-            Destroy(gameObject);
+            if (axisswitch)
+            {
+                rigidbody.AddForce(pos.x + speed, 0, 0);
+            }
+            else
+            {
+                rigidbody.AddForce(0, 0, pos.z + speed);
+            }
         }
     }
 
@@ -43,12 +62,7 @@ public class Enemy : MonoBehaviour
 
             if(hp <= 0)
             {
-                Destroy(this.gameObject);
-
-                if(ItemDropPrefab != null)
-                {
-                    Instantiate(ItemDropPrefab, transform.position, ItemDropPrefab.transform.rotation);
-                }
+                HpZero = true;
             }
         }
     }

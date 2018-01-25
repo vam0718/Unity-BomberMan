@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject BomPrefab;
 
-    public AudioSource[] sourses;
+    private AudioSource[] sourses;
 
     private CapsuleCollider playerCollider;
 
