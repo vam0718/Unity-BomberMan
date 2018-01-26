@@ -77,8 +77,7 @@ public class Enemy : MonoBehaviour
             hit.gameObject.tag == "breakBlock" || 
             hit.gameObject.tag == "Wall" || 
             hit.gameObject.tag == "Bom" || 
-            hit.gameObject.tag == "Enemy")
-        {
+            hit.gameObject.tag == "Enemy"){
             speed *= -1;
         }
     }
