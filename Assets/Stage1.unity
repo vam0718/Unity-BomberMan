@@ -470,7 +470,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u79FB\u52D5\u65B9\u6CD5\uFF08\u2191\u2193\u2190\u2192\u30AD\u30FC\u3001W\u3001A\u3001S\u3001D\uFF09\r\n\u30DC\u30E0\u30BB\u30C3\u30C8\uFF08Z\u30AD\u30FC\uFF09"
+  m_Text: 'Move = Arrow Key
+
+    Bom Set = Z Key'
 --- !u!222 &153412686
 CanvasRenderer:
   m_ObjectHideFlags: 0
