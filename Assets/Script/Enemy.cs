@@ -35,7 +35,9 @@ public class Enemy : MonoBehaviour
                 else
                 {
                     Destroy(gameObject);
-                    Instantiate(ItemDropPrefab, transform.position, ItemDropPrefab.transform.rotation);
+                    Instantiate(ItemDropPrefab, 
+                                transform.position, 
+                                ItemDropPrefab.transform.rotation);
                 }
             }
         }
@@ -71,7 +73,11 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter(Collision hit)
     {
 
-        if (hit.gameObject.tag == "UnbreakBlock" || hit.gameObject.tag == "breakBlock" || hit.gameObject.tag == "Wall" || hit.gameObject.tag == "Bom" || hit.gameObject.tag == "Enemy")
+        if (hit.gameObject.tag == "UnbreakBlock" || 
+            hit.gameObject.tag == "breakBlock" || 
+            hit.gameObject.tag == "Wall" || 
+            hit.gameObject.tag == "Bom" || 
+            hit.gameObject.tag == "Enemy")
         {
             speed *= -1;
         }
