@@ -6,21 +6,24 @@ public class Player : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject BomPrefab;
 
-    private AudioSource[] sourses;
+    //private AudioSource[] sourses;
+    private AudioSource sourses;
 
     private CapsuleCollider playerCollider;
 
     public static bool colliderHit = false;
     public bool clearHit = false;
-    public bool enemyExtinction = false;
+    public static bool enemyExtinction = false;
 
 
     void Start()
     {
         //プレイヤーコライダー取得
         playerCollider = GetComponent<CapsuleCollider>();
-        sourses = GetComponents<AudioSource>();
-        sourses[0].Play();
+        //sourses = GetComponents<AudioSource>();
+        //sourses[0].Play();
+
+        sourses = GetComponent<AudioSource>();
     }
 
     //ボムセット処理
@@ -88,13 +91,13 @@ public class Player : MonoBehaviour
             playerCollider.isTrigger = true;
             clearHit = true;
 
-            sourses[0].Stop();
-            sourses[1].Play();
+            AudioController.sourses[0].Stop();
+            AudioController.sourses[1].Play();
         }
 
         if (hit.gameObject.tag == "Item")
         {
-            sourses[2].Play();
+            sourses.Play();
         }
     }
 
