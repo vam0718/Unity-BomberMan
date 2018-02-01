@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1404336283582960}
   BomPrefab: {fileID: 1431281679432150, guid: db6b039b903e35049966b4f615188817, type: 2}
+  GameController: {fileID: 0}
   clearHit: 0
 --- !u!136 &136454698770227788
 CapsuleCollider:
