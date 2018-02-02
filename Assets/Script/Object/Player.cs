@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         float z;
 
         //実機操作切り替え
-        if (Application.isEditor)
+        if (Application.isEditor || Application.platform == RuntimePlatform.WebGLPlayer)
         {
             MethodOfOperation.SetActive(true);
 
