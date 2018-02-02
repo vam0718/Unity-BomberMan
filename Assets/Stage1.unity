@@ -7600,7 +7600,7 @@ Prefab:
       objectReference: {fileID: 1224676872}
     - target: {fileID: 1268340560985306, guid: c3ce9a972cbfa3a4ca741b2241dea9b3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1454388624780830, guid: c3ce9a972cbfa3a4ca741b2241dea9b3, type: 2}
       propertyPath: m_IsActive
@@ -7876,6 +7876,51 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_TypeName
       value: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 224067016903057784, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224067016903057784, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 224067016903057784, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 224875569863434896, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 224875569863434896, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 29.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224362070402274360, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 224362070402274360, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 111.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224961757545840492, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 224961757545840492, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3ce9a972cbfa3a4ca741b2241dea9b3, type: 2}
