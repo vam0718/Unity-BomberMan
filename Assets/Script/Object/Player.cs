@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public GameObject BomPrefab;
     public GameObject GameController;
     public GameObject MethodOfOperation;
+    public GameObject GameOverPanel;
 
     private AudioSource sourses;
 
@@ -26,8 +27,6 @@ public class Player : MonoBehaviour
         //プレイヤーコライダー取得
         playerCollider = GetComponent<CapsuleCollider>();
         sourses = GetComponent<AudioSource>();
-
-        Debug.Log(PlayerStatus.bomSetCount);
     }
 
 
@@ -150,6 +149,7 @@ public class Player : MonoBehaviour
         if (hit.gameObject.tag == "Fire")
         {
             Destroy(gameObject);
+            GameOverPanel.SetActive(true);
         }
 
         //ClearPlaneにヒットしたらすり抜け
@@ -175,6 +175,7 @@ public class Player : MonoBehaviour
         //敵に接触したら消滅
         if (hit.gameObject.tag == "Enemy")
         {
+            GameOverPanel.SetActive(true);
             Destroy(gameObject);
         }
     }
