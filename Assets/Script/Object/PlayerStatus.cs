@@ -13,17 +13,9 @@ public class PlayerStatus : MonoBehaviour
     private static int maxBomSetCount = 1;
 
     //エクスプロージョン火力
-    public static float firePower = 0;
-
-    //火力レベル
-    public float fireLevel;
+    public static float firePower = 0.5f;
 
     //最大ボム設置可能数
     public static int bomSetCount = maxBomSetCount;
 
-    void Start()
-    {
-        //火力レベルを火力に反映
-        firePower += fireLevel;
-    }
 }
