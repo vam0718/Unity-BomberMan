@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemSpeedUp : MonoBehaviour
 {
+    bool triggerFlag = true;
+
     void Update()
     {
         float z = 4;
@@ -14,8 +16,12 @@ public class ItemSpeedUp : MonoBehaviour
     {
         if(hit.gameObject.tag == "Player")
         {
-            PlayerStatus.speed += 5;
-            Destroy(gameObject);
+            if (triggerFlag)
+            {
+                triggerFlag = false;
+                PlayerStatus.speed += 5;
+                Destroy(gameObject);
+            }
         }
 
         if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemBom : MonoBehaviour
 {
+    bool triggerFlag = true;
     void Update()
     {
         float z = 4;
@@ -14,9 +15,13 @@ public class ItemBom : MonoBehaviour
     {
         if (hit.gameObject.tag == "Player")
         {
-            PlayerStatus.bomSetCount++;
-            Destroy(gameObject);
-            Debug.Log(PlayerStatus.bomSetCount);
+            if(triggerFlag)
+            {
+                triggerFlag = false;
+                PlayerStatus.bomSetCount++;
+                Destroy(gameObject);
+                Debug.Log(PlayerStatus.bomSetCount);
+            }
         }
 
         if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")

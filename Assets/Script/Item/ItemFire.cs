@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemFire : MonoBehaviour
 {
+    bool triggerFlag = true;
+
     void Update()
     {
         float z = 4;
@@ -14,8 +16,12 @@ public class ItemFire : MonoBehaviour
     {
         if(hit.gameObject.tag == "Player")
         {
-            PlayerStatus.firePower += 0.5f;
-            Destroy(gameObject);
+            if (triggerFlag)
+            {
+                triggerFlag = false;
+                PlayerStatus.firePower += 0.5f;
+                Destroy(gameObject);
+            }
         }
 
         if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")

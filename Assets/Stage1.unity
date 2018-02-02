@@ -3824,7 +3824,7 @@ Prefab:
         type: 2}
       propertyPath: MethodOfOperation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1883728416}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4dfb82d0ceaa8654d8358ddb3501fd40, type: 2}
   m_IsPrefabParent: 0
@@ -6741,6 +6741,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4834974301734638, guid: dbebed8d07daa1f4d90b28759272a916,
     type: 2}
   m_PrefabInternal: {fileID: 1789857784}
+--- !u!1 &1883728416 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1606806730753144, guid: c3ce9a972cbfa3a4ca741b2241dea9b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2084247337}
 --- !u!1 &1884351417
 GameObject:
   m_ObjectHideFlags: 0
