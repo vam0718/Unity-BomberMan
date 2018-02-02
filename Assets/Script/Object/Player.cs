@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject BomPrefab;
     public GameObject GameController;
+    public GameObject MethodOfOperation;
 
     private AudioSource sourses;
 
@@ -38,13 +39,13 @@ public class Player : MonoBehaviour
         float x;
         float z;
 
+        //実機操作切り替え
         if (Application.isEditor)
         {
+            MethodOfOperation.SetActive(true);
+
             x = Input.GetAxis("Horizontal");
             z = Input.GetAxis("Vertical");
-
-            //rigidbody.AddForce(x * PlayerStatus.speed, 0, z * PlayerStatus.speed);
-            //rigidbody.velocity = Vector3.zero;
 
             if (colliderHit == false)
             {
@@ -71,6 +72,38 @@ public class Player : MonoBehaviour
         {
             GameController.SetActive(true);
 
+            if (clearHit == false)
+            {
+                rigidbody.velocity = Vector3.zero;
+
+                if (forwardmove == true)
+                {
+                    rigidbody.AddForce(0, pos.y, pos.z + PlayerStatus.speed);
+                }
+                if (backmove == true)
+                {
+                    rigidbody.AddForce(0, pos.y, pos.z - PlayerStatus.speed);
+                }
+                if (rightmove == true)
+                {
+                    rigidbody.AddForce(pos.x + PlayerStatus.speed, pos.y, 0);
+                }
+                if (leftmove == true)
+                {
+                    rigidbody.AddForce(pos.x - PlayerStatus.speed, pos.y, 0);
+                }
+            }
+
+            //クリアパネル接触時の処理
+            else
+            {
+                rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
+                rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+            }
+
+            //エディター上実機操作用
+            /*rigidbody.velocity = Vector3.zero;
+
             if (forwardmove == true)
             {
                 rigidbody.AddForce(0, pos.y, pos.z + PlayerStatus.speed);
@@ -86,20 +119,7 @@ public class Player : MonoBehaviour
             if (leftmove == true)
             {
                 rigidbody.AddForce(pos.x - PlayerStatus.speed, pos.y, 0);
-            }
-
-            if (clearHit == false)
-            {
-                rigidbody.velocity = Vector3.zero;
-            }
-
-            //クリアパネル接触時の処理
-            else
-            {
-                rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
-                rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-            }
-
+            }*/
         }
     }
 
@@ -159,6 +179,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //ボタンが押されているかいないかを検出する
     public void forwardButtonDown()
     {
         forwardmove = true;

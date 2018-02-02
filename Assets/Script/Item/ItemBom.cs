@@ -12,7 +12,7 @@ public class ItemBom : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if(hit.gameObject.tag == "Player")
+        if (hit.gameObject.tag == "Player")
         {
             PlayerStatus.bomSetCount++;
             Destroy(gameObject);
