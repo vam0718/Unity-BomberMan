@@ -5,11 +5,8 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     public GameObject ItemDropPrefab;
-
     private Animator animator;
-
     private bool FireHit = false;
-
     private float HitDelay = 0.5f;
 
     void Start()

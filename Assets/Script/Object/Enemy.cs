@@ -72,13 +72,15 @@ public class Enemy : MonoBehaviour
     //壁やボムに当たったら逆方向に移動する処理
     void OnCollisionEnter(Collision hit)
     {
-
-        if (hit.gameObject.tag == "UnbreakBlock" || 
-            hit.gameObject.tag == "breakBlock" || 
-            hit.gameObject.tag == "Wall" || 
-            hit.gameObject.tag == "Bom" || 
-            hit.gameObject.tag == "Enemy"){
-            speed *= -1;
+        switch(hit.gameObject.tag)
+        {
+            case "UnbreakBlock":
+            case "breakBlock":
+            case "Wall":
+            case "Bom":
+            case "Enemy":
+                speed *= -1;
+                break;
         }
     }
 }

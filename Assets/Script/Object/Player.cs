@@ -139,34 +139,34 @@ public class Player : MonoBehaviour
     //トリガーヒット処理
     void OnTriggerEnter(Collider hit)
     {        
-        //ボム
-        if (hit.gameObject.tag == "Bom")
+        switch(hit.gameObject.tag)
         {
-            colliderHit = true;
-        }
+            //ボム
+            case "Bom":
+                colliderHit = true;
+                break;
 
-        //ファイヤにヒットしたらオブジェクト削除
-        if (hit.gameObject.tag == "Fire")
-        {
-            Destroy(gameObject);
-            GameOverPanel.SetActive(true);
-        }
+            //ファイヤにヒットしたらオブジェクト削除
+            case "Fire":
+                Destroy(gameObject);
+                GameOverPanel.SetActive(true);
+                break;
 
-        //ClearPlaneにヒットしたらすり抜け
-        if (hit.gameObject.tag == "ClearPlane")
-        {
-            playerCollider.isTrigger = true;
-            clearHit = true;
+            //ClearPlaneにヒットしたらすり抜け
+            case "ClearPlane":
+                playerCollider.isTrigger = true;
+                clearHit = true;
 
-            //ＢＧＭ切り替え
-            AudioController.sourses[0].Stop();
-            AudioController.sourses[1].Play();
-        }
+                //ＢＧＭ切り替え
+                AudioController.sourses[0].Stop();
+                AudioController.sourses[1].Play();
+                break;
 
-        if (hit.gameObject.tag == "Item")
-        {
-            //ＳＥ再生
-            sourses.Play();
+            //アイテム取得時にBGM再生
+            case "Item":
+                //ＳＥ再生
+                sourses.Play();
+                break;
         }
     }
 

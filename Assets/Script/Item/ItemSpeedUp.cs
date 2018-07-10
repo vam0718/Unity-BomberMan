@@ -27,7 +27,6 @@ public class ItemSpeedUp : MonoBehaviour
         if(hit.gameObject.tag == "Fire" || hit.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-
         }
     }
 }

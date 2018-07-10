@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ExprosionController4 : MonoBehaviour
 {
-
     public float exprosionDelay;
     public GameObject ExprosionPrefab;
     public bool unblockHit = false;
@@ -12,13 +11,15 @@ public class ExprosionController4 : MonoBehaviour
     //条件タグにヒットしたら、スケール調整できるように※１
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.gameObject.tag == "UnbreakBlock" || 
-            hit.gameObject.tag == "breakBlock" || 
-            hit.gameObject.tag == "Wall" || 
-            hit.gameObject.tag == "Bom" || 
-            hit.gameObject.tag == "Enemy")
+        switch (hit.gameObject.tag)
         {
-            unblockHit = true;
+            case "UnbreakBlock":
+            case "breakBlock":
+            case "Wall":
+            case "Bom":
+            case "Enemy":
+                unblockHit = true;
+                break;
         }
     }
 
@@ -38,8 +39,6 @@ public class ExprosionController4 : MonoBehaviour
 
                     transform.localScale = scale;
                     transform.position = pos;
-
-                    //Fire();
                 }
             }
         }
